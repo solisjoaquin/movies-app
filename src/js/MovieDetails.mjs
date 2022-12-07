@@ -1,11 +1,16 @@
 import { setLocalStorage, getLocalStorage, alertMessage } from "./utils.mjs";
 
-function productDetailsTemplate(product) {
-  return `<section class="product-detail"> <h3>${product.title}</h3>
-    <p class="product-card__price">Popularity: ${product.popularity}</p>
-    <p class="product__color">Release date: ${product.release_date}</p>
+function productDetailsTemplate(movie) {
+  return `<section class="product-detail"> <h3>${movie.title}</h3>
+  <img
+      class="divider"
+      src="http://image.tmdb.org/t/p/w500${movie.poster_path}"
+      alt="Image of ${movie.title}"
+    />
+    <p class="product-card__price">Popularity: ${movie.popularity}</p>
+    <p class="product__color">Release date: ${movie.release_date}</p>
     <p class="product__description">
-    ${product.overview}
+    ${movie.overview}
     </p>
     </section>`;
 }

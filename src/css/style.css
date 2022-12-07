@@ -15,6 +15,10 @@
 }
 * {
   box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+a {
+  text-decoration: none;
 }
 body {
   margin: 0;
@@ -31,54 +35,19 @@ header {
   padding: 0 10px;
 }
 .logo {
-  line-height: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   width: 245px;
   overflow: hidden;
   display: flex;
   font-size: 30px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 24px;
   text-align: right;
   font-family: var(--font-headline);
-}
-.logo img {
-  width: 60px;
-  height: 60px;
-}
-.logo a {
-  text-decoration: none;
-  color: var(--font-body);
-}
-.hero {
-  position: relative;
-}
-.hero .logo {
-  position: absolute;
-  left: calc(50% - 60px);
-  bottom: -10px;
-  background-color: white;
-}
-.logo--square {
-  font-size: var(--small-font);
-  width: 110px;
-  height: 80px;
-
-  flex-direction: column;
-  align-items: flex-end;
-  box-shadow: 1px 1px 4px var(--light-grey);
-  justify-content: center;
-  align-items: center;
-  line-height: 1;
-}
-.logo--square img {
-  width: 90px;
-  height: 90px;
-  margin-top: -1.3em;
-}
-.logo--square > div {
-  margin-top: -1.7em;
-}
-/* utility classes */
-.highlight {
-  color: var(--tertiary-color);
 }
 
 button {
@@ -222,19 +191,23 @@ button {
 .product-card {
   flex: 1 1 45%;
   margin: 0.25em;
-  padding: 0.5em;
-  border: 1px solid var(--light-grey);
+  background: #344287;
+  border-radius: 10px;
   max-width: 250px;
   text-align: center;
 }
-.product-card h2,
-.product-card h3,
-.product-card p {
-  margin: 0.5em 0;
+.product-card h1 {
+  margin: 2em 0;
+  color: #e6e6e6;
+}
+
+.product-card img {
+  border-radius: 10px;
 }
 
 .card__brand {
   font-size: var(--small-font);
+  color: #e6e6e6;
 }
 
 .card__name {

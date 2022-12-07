@@ -3,8 +3,11 @@ import { renderListWithTemplate } from "./utils.mjs";
 function movieCardTemplate(movie) {
   return `<li class="product-card">
     <a href="/movie-page/index.html?movie=${movie.id}">
-    <h3 class="card__brand">${movie.title}</h3>
-    <p class="product-card__price">${movie.release_date}</p></a>
+    <img
+    src="http://image.tmdb.org/t/p/w500${movie.poster_path}"
+    alt="Image of ${movie.title}"
+  />
+    <h1 class="card__brand">${movie.title}</h1></a>
   </li>`;
 }
 
