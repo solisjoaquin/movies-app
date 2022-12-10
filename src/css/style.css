@@ -30,7 +30,8 @@ img {
   max-width: 100%;
 }
 header {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
   justify-content: space-between;
   padding: 0 10px;
 }
@@ -45,6 +46,20 @@ header {
   font-style: normal;
   font-weight: 900;
   font-size: 20px;
+  line-height: 24px;
+  text-align: right;
+  font-family: var(--font-headline);
+}
+
+.favorites {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  font-family: "Inter";
+  font-style: normal;
+  font-size: small;
+  font-weight: 800;
+  color: lightsalmon;
   line-height: 24px;
   text-align: right;
   font-family: var(--font-headline);
@@ -216,9 +231,17 @@ button {
 /* End product list card */
 
 .product-detail {
+  /* display: inline; */
   padding: 1em;
   max-width: 500px;
   margin: auto;
+}
+
+.product-detail h3 {
+  display: inline;
+}
+img.fav {
+  width: 20px;
 }
 
 .product-detail img {

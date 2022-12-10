@@ -1,7 +1,8 @@
 import { setLocalStorage, getLocalStorage, alertMessage } from "./utils.mjs";
 
 function productDetailsTemplate(movie) {
-  return `<section class="product-detail"> <h3>${movie.title}</h3>
+  return `<section class="product-detail"><h3>${movie.title}</h3>
+  <img class="fav" src="/public/images/favorite.png">
   <img
       class="divider"
       src="http://image.tmdb.org/t/p/w500${movie.poster_path}"
