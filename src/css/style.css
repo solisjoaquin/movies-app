@@ -65,15 +65,6 @@ header {
   font-family: var(--font-headline);
 }
 
-button {
-  padding: 0.5em 2em;
-  background-color: var(--secondary-color);
-  color: white;
-  margin: auto;
-  display: block;
-  border: 0;
-  font-size: var(--large-font);
-}
 .divider {
   border-bottom: 2px solid var(--primary-color);
 }
@@ -240,8 +231,37 @@ button {
 .product-detail h3 {
   display: inline;
 }
-img.fav {
-  width: 20px;
+
+button#fav {
+  display: flex;
+  float: right;
+  width: 100px;
+  border: none;
+  margin: 0 0 10px 0;
+  padding: 3px;
+  background: #344287;
+  border-radius: 10px;
+  color: #fff;
+}
+
+button#fav:hover {
+  background: #2a356d;
+  color: #fff;
+}
+
+button#fav span {
+  margin: auto 0;
+}
+
+button#fav :nth-child(1) {display: block;}
+button#fav :nth-child(2) {display: none;}
+
+button#fav.checked :nth-child(1) {display: none;}
+button#fav.checked :nth-child(2) {display: block;}
+
+img.star {
+  max-width: 15px;
+  margin: 3px 8px;
 }
 
 .product-detail img {

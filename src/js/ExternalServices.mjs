@@ -43,6 +43,7 @@ export default class ExternalServices {
       `${moviesURL}movie/${movieId}?api_key=0a057e5cef47255a8b3f29588d59ef49`
     );
     const data = await convertToJson(response);
+    console.log(data);
     return data;
   }
 
