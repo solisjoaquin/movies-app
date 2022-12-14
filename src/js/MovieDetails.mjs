@@ -1,4 +1,4 @@
-import { setLocalStorage, getLocalStorage, alertMessage, getParam } from "./utils.mjs";
+import { getParam } from "./utils.mjs";
 
 function productDetailsTemplate(movie) {
   return `<section class="product-detail"><h3>${movie.title}</h3>
@@ -34,16 +34,14 @@ export default class MovieDetails {
     // once we have the product details we can render out the HTML
     this.renderMovieDetails("main");
 
-    if (localStorage.getItem("fav-movies")){
+    if (localStorage.getItem("fav-movies")) {
       let vals = localStorage.getItem("fav-movies").split(",");
-      if(vals.includes(this.productId)) {
+      if (vals.includes(this.productId)) {
         document.querySelector("#fav").classList = "checked";
       }
     }
-    // once the HTML is rendered we can add a listener to Add to Cart button
     this.favButton = document.querySelector("#fav");
     this.favButton.onclick = this.markFavorite;
-    // Notice the .bind(this). Our callback will not work if we don't include that line. Review the readings from this week on 'this' to understand why.
   }
 
   renderMovieDetails(product) {
@@ -56,27 +54,26 @@ export default class MovieDetails {
 
   markFavorite() {
     const movieId = getParam("movie");
-    console.log(movieId);
 
-    if (localStorage.getItem("fav-movies")){
+    if (localStorage.getItem("fav-movies")) {
       let vals = localStorage.getItem("fav-movies").split(",");
-  
-      if(! vals.includes(movieId)) {
+
+      if (!vals.includes(movieId)) {
         document.querySelector("#fav").classList = "checked";
 
         vals.push(movieId);
-      }else{
-        document.querySelector("#fav").classList ="";
+      } else {
+        document.querySelector("#fav").classList = "";
 
-        for (var i=0; i<vals.length; i++){
-          if (vals[i] === movieId){
+        for (var i = 0; i < vals.length; i++) {
+          if (vals[i] === movieId) {
             vals.splice(i, 1);
           }
         }
       }
       localStorage.setItem("fav-movies", vals.join(","));
-    }else{
-      localStorage.setItem("fav-movies",movieId);
+    } else {
+      localStorage.setItem("fav-movies", movieId);
     }
   }
 }

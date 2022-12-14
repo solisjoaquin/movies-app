@@ -16,7 +16,6 @@ export default class GenreList {
   async init() {
     const genres = await this.dataSource.getGenres();
     this.renderList(genres.genres);
-    console.log(genres.genres);
   }
 
   renderList(genres) {

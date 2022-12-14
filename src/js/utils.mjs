@@ -22,7 +22,6 @@ export function getParam(param) {
   return product;
 }
 
-// function to take a list of objects and a template and insert the objects as HTML into the DOM
 export function renderListWithTemplate(
   templateFn,
   parentElement,
@@ -30,19 +29,15 @@ export function renderListWithTemplate(
   position = "afterbegin",
   clear = false
 ) {
-  console.log(list);
   const htmlStrings = list.map(templateFn);
-  // if clear is true we need to clear out the contents of the parent.
   if (clear) {
     parentElement.innerHTML = "";
   }
   parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
 }
 
-// function to take an optional object and a template and insert the objects as HTML into the DOM
 export function renderWithTemplate(template, parentElement, data, callback) {
   parentElement.insertAdjacentHTML("afterbegin", template);
-  //if there is a callback...call it and pass data
   if (callback) {
     callback(data);
   }
@@ -54,7 +49,6 @@ async function loadTemplate(path) {
   return template;
 }
 
-// function to dynamically load the header and footer into a page
 export async function loadHeaderFooter() {
   const headerTemplate = await loadTemplate("../partials/header.html");
   const headerElement = document.querySelector("#main-header");
@@ -65,7 +59,6 @@ export async function loadHeaderFooter() {
   renderWithTemplate(footerTemplate, footerElement);
 }
 
-// set a listener for both touchend and click
 export function setClick(selector, callback) {
   qs(selector).addEventListener("touchend", (event) => {
     event.preventDefault();
@@ -85,14 +78,7 @@ export function alertMessage(message, scroll = true, duration = 3000) {
   });
   const main = document.querySelector("main");
   main.prepend(alert);
-  // make sure they see the alert by scrolling to the top of the window
-  //we may not always want to do this...so default to scroll=true, but allow it to be passed in and overridden.
   if (scroll) window.scrollTo(0, 0);
-
-  // left this here to show how you could remove the alert automatically after a certain amount of time.
-  // setTimeout(function () {
-  //   main.removeChild(alert);
-  // }, duration);
 }
 
 export function removeAllAlerts() {
