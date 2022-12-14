@@ -30,6 +30,7 @@ export function renderListWithTemplate(
   position = "afterbegin",
   clear = false
 ) {
+  console.log(list);
   const htmlStrings = list.map(templateFn);
   // if clear is true we need to clear out the contents of the parent.
   if (clear) {

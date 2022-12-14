@@ -30,7 +30,8 @@ img {
   max-width: 100%;
 }
 header {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
   justify-content: space-between;
   padding: 0 10px;
 }
@@ -50,15 +51,20 @@ header {
   font-family: var(--font-headline);
 }
 
-button {
-  padding: 0.5em 2em;
-  background-color: var(--secondary-color);
-  color: white;
-  margin: auto;
-  display: block;
-  border: 0;
-  font-size: var(--large-font);
+.favorites {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  font-family: "Inter";
+  font-style: normal;
+  font-size: small;
+  font-weight: 800;
+  color: lightsalmon;
+  line-height: 24px;
+  text-align: right;
+  font-family: var(--font-headline);
 }
+
 .divider {
   border-bottom: 2px solid var(--primary-color);
 }
@@ -216,9 +222,46 @@ button {
 /* End product list card */
 
 .product-detail {
+  /* display: inline; */
   padding: 1em;
   max-width: 500px;
   margin: auto;
+}
+
+.product-detail h3 {
+  display: inline;
+}
+
+button#fav {
+  display: flex;
+  float: right;
+  width: 100px;
+  border: none;
+  margin: 0 0 10px 0;
+  padding: 3px;
+  background: #344287;
+  border-radius: 10px;
+  color: #fff;
+}
+
+button#fav:hover {
+  background: #2a356d;
+  color: #fff;
+}
+
+button#fav span {
+  margin: auto 0;
+}
+
+button#fav :nth-child(1) {display: block;}
+button#fav :nth-child(2) {display: none;}
+
+button#fav.checked :nth-child(1) {display: none;}
+button#fav.checked :nth-child(2) {display: block;}
+
+img.star {
+  max-width: 15px;
+  margin: 3px 8px;
 }
 
 .product-detail img {
