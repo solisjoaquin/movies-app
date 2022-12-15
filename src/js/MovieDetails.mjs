@@ -3,9 +3,8 @@ import { getParam } from "./utils.mjs";
 function productDetailsTemplate(movie) {
   return `<section class="product-detail"><h3>${movie.title}</h3>
   <button id="fav">
-    <img class="star" src="../public/images/unmarked-fav.png">
-    <img class="star" src="../public/images/marked-fav.png">
-  <span>Favorite</span>
+  <span class="unchecked">&#x1F7CA;</span>
+  Favorite
   </button>
   <img
       class="divider"

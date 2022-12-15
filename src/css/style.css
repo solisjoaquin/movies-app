@@ -19,12 +19,19 @@
 }
 a {
   text-decoration: none;
+  
 }
+
+a:visited {
+  color:white;
+}
+
 body {
   margin: 0;
   font-family: var(--font-body);
   font-size: var(--font-base);
   color: var(--dark-grey);
+  background: linear-gradient(to bottom, #040405, #8286af);
 }
 img {
   max-width: 100%;
@@ -36,41 +43,125 @@ header {
   padding: 0 10px;
 }
 .logo {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 21px;
+  padding-left: 10px;
   width: 245px;
   overflow: hidden;
   display: flex;
-  font-size: 30px;
-  font-family: "Inter";
+  font-family: "Helvetica", "Futura", "Arial";
   font-style: normal;
   font-weight: 900;
-  font-size: 20px;
-  line-height: 24px;
-  text-align: right;
-  font-family: var(--font-headline);
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+  color: #333;
+  animation: fadein 3s;
+  opacity: 100;
 }
 
-.favorites {
-  padding-top: 20px;
-  padding-bottom: 20px;
+ul {
+  list-style-type: none;
   display: flex;
+  overflow: hidden;
+}
+
+@keyframes logo {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Logo Animation */
+/* .logo-animation { */
+  /* Add a transition effect to smoothly change the opacity */
+  /* transition: opacity 0.5s ease-in-out; */
+  
+  /* Add an animation that alternates the opacity from 0% to 100% */
+  /* animation: alternate-opacity 5s infinite; */
+/* } */
+
+/* @keyframes alternate-opacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+} */
+
+/* Alternative Logo */
+
+
+
+/* Favorites */
+
+.favorites {
+  padding-top: 35px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  display: flex;
+  overflow: hidden;
   font-family: "Inter";
   font-style: normal;
-  font-size: small;
+  font-size: medium;
   font-weight: 800;
-  color: lightsalmon;
+  color: rgb(204, 187, 187);
   line-height: 24px;
   text-align: right;
   font-family: var(--font-headline);
 }
 
 .divider {
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid rgb(232, 233, 237);
+  width:100%;
+  border-bottom: 2px solid rgb(196, 197, 205);
+  box-shadow: 0px 3px 3px;
+  margin: 30px 0;
+  position: relative;
+  overflow: hidden;
 }
+
+.divider:before, .divider:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to bottom, transparent, black);
+}
+
+.divider:before {
+  left: 2;
+}
+
+.divider:after {
+  right: 2;
+}
+
 .title {
   text-transform: capitalize;
+  /* font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; */
+  font-size: 30px;
+  font-weight: bold;
+  color: #cdcde0;
+  text-shadow: 2px 2px 2px #cccccc;
+  text-transform: capitalize;
+  padding-left: 60px;
+  transition: transform 0.5s;
 }
+
+.title:hover {
+  /* add the spinning animation */
+  transform: scale(1.1);
+}
+
 /* End utility classes */
 
 /* Cart icon styles */
@@ -131,6 +222,8 @@ header {
 }
 .products {
   padding: 0.5em;
+  color: rgb(241, 234, 234);
+
 }
 .product-list,
 .genre-list,
@@ -201,7 +294,15 @@ header {
   border-radius: 10px;
   max-width: 250px;
   text-align: center;
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(120deg, #4a558c 0%, #060f3c 100%);
 }
+
+.product-card:hover {
+  transform: scale(1.1);
+  background: linear-gradient(120deg, #344aba 0%, #9298b6 100%);
+}
+
 .product-card h1 {
   margin: 2em 0;
   color: #e6e6e6;
@@ -226,10 +327,12 @@ header {
   padding: 1em;
   max-width: 500px;
   margin: auto;
+  color: white;
 }
 
 .product-detail h3 {
   display: inline;
+  color: white;
 }
 
 button#fav {
@@ -254,7 +357,7 @@ button#fav span {
 }
 
 button#fav :nth-child(1) {display: block;}
-button#fav :nth-child(2) {display: none;}
+button#fav :nth-child(2) {color: yellow;}
 
 button#fav.checked :nth-child(1) {display: none;}
 button#fav.checked :nth-child(2) {display: block;}
@@ -311,7 +414,7 @@ img.star {
   justify-content: space-between;
   padding: 0.5em;
   background-color: var(--primary-color);
-  border: 1px solid darkorange;
+  border: 1px solid rgb(213, 230, 225);
 }
 .alert > p {
   margin: 0;
@@ -334,4 +437,25 @@ img.star {
 footer {
   font-size: var(--small-font);
   padding: 1em;
+  padding-left: 2em;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: capitalize;
+  animation: fadein 2s;
+  opacity: 100;
+  color:rgb(206, 206, 218)
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.unchecked {
+
 }
